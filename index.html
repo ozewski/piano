@@ -1,0 +1,100 @@
+<!--
+This website was made by Michael Oltarzewski (@ozewski) on a weekend in January 2022.
+This is completely work-in-progress, but should be functional. If you want to make 
+changes, submit a PR on GitHub and I'll look at it.
+Feel free to practice with this tool and share it with your friends!
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Piano Teacher</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link href="style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Source+Sans+Pro" />
+    </head>
+    <body>
+        <div class="page">
+            <div class="container">
+                <div class="column sidebar">
+                    <div class="box input-box">
+                        <h1 class="question-title">What note?</h1>
+                        <div class="input-dialog">
+                            <input type="text" id="note-input" maxlength="2">
+                            <div id="note-submit-button">&#x2714;&#xFE0F;</div>
+                        </div>
+                    </div>
+                    <div class="box status-box">
+                        <p id="status-message" style="display:none">This game is designed to help beginning pianists learn the notes on a piano. Focus on accuracy; your speed will naturally increase as you become more confident with the keys.</p>
+                        <div id="status-display">
+                            <h1 id="status-note">???</h1>
+                            <p id="status-info">Focus on accuracy, don't rush.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column page-content">
+                    <div class="box piano-box">
+                        <ul id="piano">
+                            <li class="key">
+                                <div class="white-key" data-pitch="0"></div>
+                                <div class="black-key key-short" data-pitch="1"></div>
+                            </li>
+                            <li class="key">
+                                <div class="white-key" data-pitch="2"></div>
+                                <div class="black-key key-far" data-pitch="3"></div>
+                            </li>
+                            <li class="key">
+                                <div class="white-key" data-pitch="4"></div>
+                            </li>
+                            <li class="key">
+                                <div class="white-key" data-pitch="5"></div>
+                                <div class="black-key key-short" data-pitch="6"></div>
+                            </li>
+                            <li class="key">
+                                <div class="white-key" data-pitch="7"></div>
+                                <div class="black-key key-mid" data-pitch="8"></div>
+                            </li>
+                            <li class="key">
+                                <div class="white-key" data-pitch="9"></div>
+                                <div class="black-key key-far" data-pitch="10"></div>
+                            </li>
+                            <li class="key">
+                                <div class="white-key" data-pitch="11"></div>
+                            </li>
+                            <li class="key">
+                                <div class="white-key" data-pitch="0"></div>
+                                <div class="black-key key-short" data-pitch="1"></div>
+                            </li>
+                            <li class="key">
+                                <div class="white-key" data-pitch="2"></div>
+                                <div class="black-key key-far" data-pitch="3"></div>
+                            </li>
+                            <li class="key">
+                                <div class="white-key" data-pitch="4"></div>
+                            </li>
+                            <li class="key">
+                                <div class="white-key" data-pitch="5"></div>
+                                <div class="black-key key-short" data-pitch="6"></div>
+                            </li>
+                            <li class="key">
+                                <div class="white-key" data-pitch="7"></div>
+                                <div class="black-key key-mid" data-pitch="8"></div>
+                            </li>
+                            <li class="key">
+                                <div class="white-key" data-pitch="9"></div>
+                                <div class="black-key key-far" data-pitch="10"></div>
+                            </li>
+                            <li class="key">
+                                <div class="white-key" data-pitch="11"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

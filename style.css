@@ -1,0 +1,260 @@
+:root {
+    --color-button-highlight: #ffa819;
+    --color-key-highlight: #ffdfab;
+    --color-light-gray: rgb(188, 188, 188);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Source Sans Pro', serif;
+    background-color: #ebebeb;
+    -webkit-font-smoothing: antialiased;
+}
+
+input {
+    font-family: 'Source Sans Pro', serif;
+}
+
+h1 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 500;
+}
+
+p {
+    line-height: 1.35;
+}
+
+.page {
+    display: flex;
+    align-items: center;
+    height: 100%
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin: auto;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    flex: auto;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 10px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.page-content {
+    width: 70%;
+    height: 300px;
+}
+
+.sidebar {
+    flex-grow: 1;
+    height: 0%;
+    width: 30%;
+}
+
+#piano {
+    display: flex;
+    min-width: 350px;
+    max-width: 700px;
+    margin: 20px auto;
+    height: 175px;
+    padding: 0;
+}
+
+.key {
+    flex: 1;
+    position: relative;
+    list-style-type: none;
+    border-right: 1px solid var(--color-light-gray);
+    border-top: 1px solid var(--color-light-gray);
+    border-bottom: 1px solid var(--color-light-gray);
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 5px rgb(210, 210, 210);
+}
+
+.white-key {
+    height: 100%;
+    z-index: 1;
+}
+
+.black-key {
+    position: absolute;
+    top: 0px;
+    height: 60%;
+    width: 50%;
+    background-color: #111111;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0px 4px rgb(32 32 32 / 20%);
+    z-index: 2;
+}
+
+#piano > .key:first-child {
+    border-bottom-left-radius: 0px;
+    border-left: 1px solid var(--color-light-gray);
+}
+
+#piano > .key:last-child {
+    border-bottom-right-radius: 0px;
+}
+
+.key-short {
+    left: 67%;
+}
+
+.key-mid {
+    left: 75%;
+}
+
+.key-far {
+    left: 83%;
+}
+
+.key-highlight {
+    animation: highlight 1.0s forwards;
+}
+
+.key-unhighlight {
+    animation: unhighlight 1.0s forwards;
+}
+
+.key-highlighted {
+    background-color: var(--color-key-highlight);
+}
+
+.piano-box {
+    overflow-x: auto;
+}
+
+.input-box {
+    text-align: center;
+}
+
+.status-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-dialog {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+#note-input {
+    border-radius: 5px;
+    border: 1px solid var(--color-light-gray);
+    height: 25px;
+    padding: 3px;
+    text-align: center;
+    width: 60px;
+}
+
+#note-submit-button {
+    margin-left: 10px;
+    border-bottom: 1px solid var(--color-light-gray);
+    margin-bottom: 10px;
+    padding: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#status-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#status-note {
+    border-right: 1px solid var(--color-light-gray);
+    color: var(--color-light-gray);
+    text-align: center;
+    padding: 16px;
+    width: 30%;
+    margin: 0;
+}
+
+#status-info {
+    padding: 16px;
+    margin: 0;
+    width: 50%;
+}
+
+@media only screen and (max-width: 1300px) {
+    .question-title {
+        font-size: 1.7em;
+    }
+    .container {
+        flex-direction: column;
+        width: 70%;
+    }
+    .column {
+        flex-direction: row;
+        width: 100%;
+    }
+    .input-box {
+        width: 40%
+    }
+    .status-box {
+        width: 60%;
+        height: 100%;
+        align-self: end;
+        -webkit-align-self: end;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+        width: 100%;
+    }
+    .piano-box {
+        padding: 20px 0;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #status-display {
+        flex-direction: column;
+    }
+    #status-note {
+        border-right: 0;
+        border-bottom: 1px solid var(--color-light-gray);
+        width: 50%
+    }
+    #status-info {
+        text-align: center;
+        width: 100%;
+    }
+    .input-box {
+        width: 50%
+    }
+    .key {
+        border-radius: 0 0 4px 4px;
+    }
+    .black-key {
+        border-radius: 0 0 4px 4px;
+    }
+}
+
+@keyframes highlight {
+    from { background-color: none; }
+    to { background-color: var(--color-key-highlight); }
+}
+
+@keyframes unhighlight {
+    from { background-color: var(--color-key-highlight); }
+    to { background-color: none; }
+}
